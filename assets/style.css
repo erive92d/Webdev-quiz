@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
 nav {
@@ -19,6 +20,17 @@ nav {
     background-color: gray;
     border-radius: 5px;
     line-height: 2.0;
+}
+.choices {
+    list-style-type: none;
+}
+
+.quiz {
+    display: block;
+    text-align: center;
+    margin: auto;
+    font-size: 200%;
+
 }
 
 

@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+
+.container {
+    display: flex;
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    background-color: gray;
+    border-radius: 5px;
+    line-height: 2.0;
+}
+
+

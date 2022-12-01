@@ -98,21 +98,40 @@ function checkAnswer() {
 
 
 function nextQuestion() {
-  
+  if(questionChoice === 7) {
+    questionChoice = 0
+  }
   questionChoice++;
+  
   quizShow(questionChoice);
 }
+var timeLeft = 5;
 
 quizDisplay.addEventListener("click", function (e) {
-  
+  var correct = true
   if (e.target.textContent !== checkAnswer()) {
-    alert("incorrect");
-  } else {
-    alert("correct");
+    
+    correct = false;
   }
-
+   
   nextQuestion();
+  timeLeft+=2
+  alert(correct)
+ 
+  
+  
+ 
+ 
 });
+
+
+
+// function addingTime(result,time) {
+//   if(result) {
+//     time+=5
+//   }
+
+// }
 
 function hideWelcome() {
   welcomeDisplay.setAttribute("style", "display:none");
@@ -120,6 +139,8 @@ function hideWelcome() {
 
 function quizShow(num) {
   var questionNum = num;
+
+  
 
   {
     quizDisplay.innerHTML = `
@@ -139,6 +160,27 @@ function startGame() {
   
   hideWelcome();
   quizShow(questionChoice);
+  setTimer()
+ 
 }
 
+
 startBtnEl.addEventListener("click", startGame);
+
+var timeEl = document.getElementById('timer')
+var setTimer = function() {
+  
+    var timer = setInterval( function() {
+    timeLeft--
+
+    timeEl.textContent = timeLeft;
+    if(timeLeft === 0) {
+      clearInterval(timer)
+    }
+
+
+
+
+
+  },1000)
+}
